@@ -1,9 +1,8 @@
 package application;
     /*
     TODO:
-                []*. Cool Design.
-                []*. Conversions (Celsius to Fahrenheit, and, vice versa). (with option selection)
                 []*. Log file generation: With date and the operations done.
+                []*. Add test cases.
     */
 
 import application.ui.CalculatorUI;

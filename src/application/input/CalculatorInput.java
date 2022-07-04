@@ -15,4 +15,5 @@ public class CalculatorInput {
             throw new InputMismatchException();
         }
     }
+
 }
