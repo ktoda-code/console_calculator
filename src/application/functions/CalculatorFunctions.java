@@ -1,4 +1,4 @@
-package application.funtions;
+package application.functions;
 
 public class CalculatorFunctions {
     public int multiply(int n1, int n2) {

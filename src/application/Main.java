@@ -1,15 +1,17 @@
 package application;
     /*
     TODO:
-                []*. Log file generation: With date and the operations done.
                 []*. Add test cases.
+                []. Show log-file content. (Special)
     */
 
+import application.functions.LogGenerator;
 import application.ui.CalculatorUI;
 
 public class Main {
     public static void main(String[] args) {
-        CalculatorUI calc = new CalculatorUI();
+        LogGenerator lg = LogGenerator.getInstance();
+        CalculatorUI calc = new CalculatorUI(lg);
         calc.showInterface();
     }
 }

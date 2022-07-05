@@ -1,11 +1,17 @@
 package application.ui;
 
+import application.functions.LogGenerator;
 import application.input.CalculatorInput;
 import application.output.CalculationsOutput;
 import application.output.ConversionsOutput;
 
 public class CalculatorUI {
     private int n1,n2;
+    private final LogGenerator lg;
+
+    public CalculatorUI(LogGenerator lg) {
+        this.lg = lg;
+    }
 
     public void showInterface() {
         System.out.println("=====================================");
@@ -18,7 +24,7 @@ public class CalculatorUI {
     }
 
     private void computeUserInput(){
-        CalculatorInput input = new CalculatorInput();
+        CalculatorInput input = new CalculatorInput(lg);
 
         System.out.print("Number 1: ");
         n1 = input.getUserInput();
@@ -30,12 +36,12 @@ public class CalculatorUI {
     }
 
     private void computeOutput(int n1, int n2) {
-        CalculationsOutput output = new CalculationsOutput();
+        CalculationsOutput output = new CalculationsOutput(lg);
         output.calculateOutput(n1,n2);
     }
 
     private void showMenu() {
-        CalculatorInput input = new CalculatorInput();
+        CalculatorInput input = new CalculatorInput(lg);
         int option;
         do {
             System.out.println("\t\t Choose an option: \t\t");
@@ -56,14 +62,13 @@ public class CalculatorUI {
             case 1 -> temperatureConversions();
             case 2 -> calculations();
             case -1 -> {
-                return;
             }
             default -> System.out.println("The selected option " + option + " is not listed. \n");
         }
     }
 
     private void temperatureConversions() {
-        CalculatorInput input = new CalculatorInput();
+        CalculatorInput input = new CalculatorInput(lg);
         int option;
         do {
             System.out.println("\t\t Choose an option: \t\t");
@@ -83,7 +88,8 @@ public class CalculatorUI {
         switch (option) {
             case 1 -> temperatureCelsToFahr();
             case 2 -> temperatureFahrToCels();
-            case -1 -> { return;}
+            case -1 -> {
+            }
             default -> System.out.println("The selected option " + option + " is not listed. \n");
         }
     }
@@ -92,7 +98,7 @@ public class CalculatorUI {
         System.out.println("\t\t Write a number \t\t");
         System.out.println("-------------------------------------");
 
-        CalculatorInput input = new CalculatorInput();
+        CalculatorInput input = new CalculatorInput(lg);
         System.out.print("Fahrenheit: ");
         int fahr = input.getUserInput();
 
@@ -108,7 +114,7 @@ public class CalculatorUI {
         System.out.println("\t\t Write a number \t\t");
         System.out.println("-------------------------------------");
 
-        CalculatorInput input = new CalculatorInput();
+        CalculatorInput input = new CalculatorInput(lg);
         System.out.print("Celsius: ");
         int cels = input.getUserInput();
 

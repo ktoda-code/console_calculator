@@ -1,8 +1,17 @@
 package application.output;
 
-import application.funtions.CalculatorFunctions;
+import application.functions.CalculatorFunctions;
+import application.functions.LogGenerator;
+
+import java.util.logging.Level;
 
 public class CalculationsOutput {
+    private final LogGenerator lg;
+
+    public CalculationsOutput(LogGenerator lg){
+        this.lg = lg;
+    }
+
     public void calculateOutput(int n1, int n2) {
         CalculatorFunctions functions = new CalculatorFunctions();
 
@@ -16,7 +25,7 @@ public class CalculationsOutput {
             System.out.println(n1 + " / " + n2 + " = " + functions.divide(n1, n2));
         } catch (ArithmeticException ae) {
             System.out.println(n1 + " / " + n2 + " = 0");
-            throw new ArithmeticException("Divided by zero! " + ae);
+            lg.registerLog(Level.SEVERE,"Divided by zero! " + ae);
         }
         System.out.println();
     }

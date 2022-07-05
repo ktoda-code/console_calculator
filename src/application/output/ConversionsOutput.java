@@ -1,6 +1,6 @@
 package application.output;
 
-import application.funtions.CalculatorFunctions;
+import application.functions.CalculatorFunctions;
 
 public class ConversionsOutput {
     public void celsToFahr(int cels) {
