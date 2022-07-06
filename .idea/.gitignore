@@ -6,10 +6,14 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
 # Java ignore files
 
 # Compiled class file
 *.class
+
+# Log Directories
+../logs/
 
 # Log files
 *.log
