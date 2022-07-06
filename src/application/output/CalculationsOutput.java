@@ -25,7 +25,7 @@ public class CalculationsOutput {
             System.out.println(n1 + " / " + n2 + " = " + functions.divide(n1, n2));
         } catch (ArithmeticException ae) {
             System.out.println(n1 + " / " + n2 + " = 0");
-            lg.registerLog(Level.SEVERE,"Divided by zero! " + ae);
+            lg.registerLog(Level.WARNING,"Divided by zero! " + ae);
         }
         System.out.println();
     }

@@ -20,7 +20,7 @@ public class CalculatorInput {
             number = scanner.nextInt();
             return number;
         } catch (InputMismatchException ime) {
-            lg.registerLog(Level.SEVERE, "Only Integers are allowed! " + ime);
+            lg.registerLog(Level.WARNING, "Only Integers are allowed! " + ime);
             return 0;
         }
     }

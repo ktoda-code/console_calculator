@@ -1,9 +1,4 @@
 package application;
-    /*
-    TODO:
-                []*. Add test cases.
-                []. Show log-file content. (Special)
-    */
 
 import application.functions.LogGenerator;
 import application.ui.CalculatorUI;

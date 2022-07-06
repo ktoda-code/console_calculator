@@ -11,7 +11,7 @@
 # Compiled class file
 *.class
 
-# Log file
+# Log files
 *.log
 
 # Package Files #
@@ -27,3 +27,5 @@
 hs_err_pid*
 replay_pid*
 
+# Team releated
+TODO.md
