@@ -28,4 +28,7 @@ hs_err_pid*
 replay_pid*
 
 # Team releated
-TODO.md
+../TODO.md
+
+# Config files
+*.config
