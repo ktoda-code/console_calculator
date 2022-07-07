@@ -1,6 +1,7 @@
 package application.functions;
 
 import java.io.IOException;
+import java.util.Properties;
 import java.util.logging.*;
 
 public class LogGenerator {
@@ -35,9 +36,13 @@ public class LogGenerator {
 
     private void createFile(){
         FileHandler fh; // Create a FileHandler
+        ReadPropertyFile rpf = new ReadPropertyFile(new Properties(), lg);
         try {
             // Create a limit of 1 MB per file.
-            String abs_path = "G:\\Personal Folder\\Development\\Java\\Fundamentals\\Console_Applications\\Simple_Calculator_Console\\logs";
+            String abs_path = rpf.getPropertyContent("logs_absolute_path");
+            if(abs_path == null){
+                throw new IOException();
+            }
             fh = new FileHandler(abs_path + "/calculator_temp_%g.log", MB_1, 10, true);
             fh.setLevel(Level.ALL);
             logger.addHandler(fh); // Add the file handler to the logger.
